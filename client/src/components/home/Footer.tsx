@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChartNoAxesColumnIcon } from "lucide-react";
 import { homefooterLinks } from "../../assets/assets";
 import logo  from "../../assets/logo.png";
-import { SiX, SiInstagram, SiFacebook, SiTwitch } from "@icons-pack/react-simple-icons";
+import { SiX, SiInstagram, SiTwitch, SiTelegram } from "@icons-pack/react-simple-icons";
 
 export default function Footer() {
     return (
@@ -22,8 +21,8 @@ export default function Footer() {
                             <a href="https://www.instagram.com/dinuz79/" className="text-muted-foreground hover:text-primary transition-colors">
                                 <SiInstagram size={20} />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <SiFacebook size={20} />
+                            <a href="https://t.me/daynanf" className="text-muted-foreground hover:text-primary transition-colors">
+                                <SiTelegram size={20} />
                             </a>
                             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                                 <SiTwitch size={20} />

@@ -19,7 +19,7 @@ const initialState: ThemeProviderState = {
     setTheme: () => null
 };
 const ThemeProviderContext = createContext<ThemeProviderState | undefined>(initialState);
-
+    
 export function ThemeProvider({ children, defaultTheme = "system", storageKey = "PeakSEO-AI-theme", ...props}: ThemeProviderProps) {
     const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(storageKey) as Theme) || defaultTheme);
 

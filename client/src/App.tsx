@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
 import Analyze from "./pages/analyze";
 import RankTracker from "./pages/RankTracker";
+import RankDetail from "./pages/RankDetail";
 
 
 export default function App(){
@@ -26,7 +27,8 @@ export default function App(){
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/analyze" element={<Analyze />} />
                     <Route path="/rank-tracker" element={<RankTracker/>}/>
-
+                    <Route path="/rank/:id" element={<RankDetail/>} />
+                    
 
                 </Route>
             </Routes>

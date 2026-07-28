@@ -32,7 +32,6 @@ export default function App(){
                     <Route path="/rank/:id" element={<RankDetail/>} />
                      <Route path="/report/:id" element={<Report />} />
                     <Route path="/history" element={<History />} />
-
                 </Route>
             </Routes>
         </>

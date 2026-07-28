@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
+import Analyze from "./pages/analyze";
 
 
 export default function App(){
@@ -22,6 +23,8 @@ export default function App(){
                 <Route path="/register" element={<Login state="register"/>} />
                 <Route element={<ProtectedRoute/>}>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/analyze" element={<Analyze />} />
+
 
                 </Route>
             </Routes>

@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import Analyze from "./pages/analyze";
 import RankTracker from "./pages/RankTracker";
 import RankDetail from "./pages/RankDetail";
+import Report from "./pages/Report";
+import History from "./pages/History";
 
 
 export default function App(){
@@ -28,7 +30,8 @@ export default function App(){
                     <Route path="/analyze" element={<Analyze />} />
                     <Route path="/rank-tracker" element={<RankTracker/>}/>
                     <Route path="/rank/:id" element={<RankDetail/>} />
-                    
+                     <Route path="/report/:id" element={<Report />} />
+                    <Route path="/history" element={<History />} />
 
                 </Route>
             </Routes>

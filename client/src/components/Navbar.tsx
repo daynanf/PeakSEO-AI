@@ -1,6 +1,6 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import { Search, BarChart3, History, LogOut, Menu, X, Target, Sun, Moon, ChartNoAxesColumnIcon } from "lucide-react";
+import { Search, BarChart3, History, LogOut, Menu, X, Target, Sun, Moon, } from "lucide-react";
 import { useState } from "react";
 import logo from "./../assets/logo.png";
 

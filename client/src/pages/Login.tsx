@@ -23,14 +23,14 @@ export default function Login({state}:{state:string}) {
                         <span className="text-xl tracking-tight text-foreground">PeakSEO AI</span>
                     </Link>
                 </div>
-            </div>
+            
 
             {/* Form Card */}
                 <div className="bg-card border border-border rounded-2xl p-8">
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="text-center py-5">
                             <h1 className="text-2xl text-foreground">Welcome back</h1>
-                            <p className="text-muted-foreground text-sm mt-1">{isLoginState ? "Sign in to your" : "Create an"} Rank Pilot account</p>
+                            <p className="text-muted-foreground text-sm mt-1">{isLoginState ? "Sign in to your" : "Create an"} PeakSEO AI account</p>
                         </div>
 
                         {!isLoginState && (
@@ -97,6 +97,7 @@ export default function Login({state}:{state:string}) {
                         {isLoginState ? "Sign up" : "Sign in"}
                     </button>
                 </p>
+            </div>
         </div>
     );
 }

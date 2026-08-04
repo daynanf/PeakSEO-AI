@@ -1,5 +1,6 @@
 import User from "../models/User.js"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 
 const generateToken =(id)=>{
     return jwt.sign({id},process.env.JWT_SECRET, {expiresIn: "30d"})
@@ -7,7 +8,8 @@ const generateToken =(id)=>{
 
 export const register = async(req,res)=>{
     try {
-        const {name,email,password}= req.body;
+        const {name,password}= req.body;
+        const email = req.body.email.trim().toLowerCase()
         if (!name || !email || !password) return res.status(400).json({success: false, message: "All feilds are required"});
 
         const existingUser = await User.findOne({email})

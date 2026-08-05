@@ -14,8 +14,8 @@ import { useApp } from "./context/AppContext";
 
 
 export default function App(){
-     const location = useLocation();
-     const {user, loading} = useApp();
+    const location = useLocation();
+    const {user, loading} = useApp();
 
     const hideNavbar = ["/login", "/register"].includes(location.pathname);
 

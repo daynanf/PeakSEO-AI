@@ -1,17 +1,40 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Loader2, Mail, User2Icon,Lock } from "lucide-react";
+import { useApp } from "../context/AppContext";
+import { toast } from "react-hot-toast/headless";
+
+const [SearchParams] = useSearchParams();
+const navigate =useNavigate();
 
 export default function Login({state}:{state:string}) {
     const [isLoginState, setIsLoginState] = useState(state==="login");
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-    const [loading] = useState(false);
+    const [loading,setLoading] = useState(false);
+    const {login, register}= useApp();
     
     const handleSubmit =async (e: React.SubmitEvent)=>{
         e.preventDefault()
+        setLoading(true);
+
+        let result;
+        if (isLoginState){
+            result = await login(email,password);
+        }else{
+            result = await register(name,email,password);
+        }
+
+        if (result.success){
+            const  redirect = SearchParams.get("redirect") || "/dashboard";
+            navigate(redirect);
+        }else{
+            toast.error(result.message || "Something went wrong");
+        }
+        setLoading(false);
     }
     return (
         <div className="min-h-screen flex items-center justify-center px-4 ">

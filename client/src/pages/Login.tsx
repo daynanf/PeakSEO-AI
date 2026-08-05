@@ -26,7 +26,7 @@ export default function Login({state}:{state:string}) {
         if (isLoginState){
             result = await login(email,password);
         }else{
-            result = await register(name,email,password);
+            result = await register(name, email, password);
         }
 
         if (result.success){

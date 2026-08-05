@@ -81,7 +81,7 @@ export function AppProvider({children}: {children:ReactNode}) {
 
     const register = async (name: string, email: string, password: string) =>{
         try {
-            const res = await axios.post(`${backendUrl}/api/auth/register`,{name,email,password});
+            const res = await axios.post(`${backendUrl}/api/auth/register`,{name, email, password});
             if (res.data.success){
                 setToken(res.data.token);
                 setUser(res.data.user);

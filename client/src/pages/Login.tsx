@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router";
+import {  } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Loader2, Mail, User2Icon,Lock } from "lucide-react";
 import { useApp } from "../context/AppContext";
 import { toast } from "react-hot-toast/headless";
 
-const [SearchParams] = useSearchParams();
-const navigate =useNavigate();
 
 export default function Login({state}:{state:string}) {
+
+    const [SearchParams] = useSearchParams();
+    const navigate =useNavigate();
     const [isLoginState, setIsLoginState] = useState(state==="login");
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");

@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import { dummyAnalysisData } from "../assets/assets";
 import { SearchIcon,ArrowRightIcon, BarChart3Icon, TrendingUpIcon, GlobeIcon } from "lucide-react";
 import AnalysesCard from "../components/AnalysesCard";
+import { useApp } from "../context/AppContext";
 
 interface AnalysisSummary {
     _id: string;
@@ -19,7 +20,7 @@ interface AnalysisSummary {
 }
     
 export default function Dashboard() {
-    const user = {name : "Jhon Doe", plan: "free", analysisCount: 2};
+    const {user} = useApp();
     const navigate = useNavigate();
     const [url,setUrl] = useState("");
     const [analyses, setAnalyses]=useState<AnalysisSummary[]>([]);
@@ -105,7 +106,7 @@ return (
                             <BarChart3Icon size={22} />
                         </div>
                         <div>
-                            <p className="text-2xl font-bold text-foreground">{user?.plan === "free" ? `${5 - (user?.analysisCount || 0)}` : "∞"}</p>
+                            <p className="text-2xl font-bold text-foreground">{user?.plan === "free" ? `${5 - ( 0)}` : "∞"}</p>
                             <p className="text-xs text-muted-foreground">Scans Left Today</p>
                         </div>
                     </div>

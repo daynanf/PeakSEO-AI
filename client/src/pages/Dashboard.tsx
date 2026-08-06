@@ -25,6 +25,7 @@ export default function Dashboard() {
     const [url,setUrl] = useState("");
     const [analyses, setAnalyses]=useState<AnalysisSummary[]>([]);
     const [loading,setLoading]=useState(true);
+    const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
     const fetchRecent = async ()=>{
         setTimeout(()=>{
@@ -63,7 +64,7 @@ return (
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-2xl sm:text-3xl font-medium text-foreground mb-1">
-                        Welcome back, <span className="gradient-text">{user?.name}</span>
+                        Welcome back, <span className="gradient-text">{capitalizeFirstLetter(user?.name || "")}</span>
                     </h1>
                     <p className="text-muted-foreground text-sm">Analyze websites and boost your SEO performance.</p>
                 </div>

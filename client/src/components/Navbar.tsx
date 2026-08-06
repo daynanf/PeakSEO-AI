@@ -11,6 +11,7 @@ export default function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
     const [mobileOpen, setMobileOpen] = useState(false);
+    const capitalizeFirstLetter =(str: string)=> str.charAt(0).toUpperCase()+ str.slice(1);
 
     const handleLogout = () => {
         logout();
@@ -60,7 +61,7 @@ export default function Navbar() {
                                     <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold" style={{ color: "var(--background)" }}>
                                         {user.name.charAt(0).toUpperCase()}
                                     </div>
-                                    <span className="text-foreground font-medium">{user.name}</span>
+                                    <span className="text-foreground font-medium">{capitalizeFirstLetter(user.name)}</span>
                                     <span className="px-2 py-0.5 rounded-full text-[10px] font-medium uppercase bg-accent/10 border border-accent/15 text-accent">{user.plan}</span>
                                 </div>
                                 <button onClick={handleLogout} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-all">

@@ -35,7 +35,7 @@ export function AppProvider({children}: {children:ReactNode}) {
     })
 
     api.interceptors.request.use((config)=>{
-        const token =localStorage.getItem("token");
+        const token = localStorage.getItem("token");
         if(token){
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -52,7 +52,7 @@ export function AppProvider({children}: {children:ReactNode}) {
              if(data.success){
                 setUser(data.user)
              }
-        } catch (error) {
+        } catch (error: any) {
             localStorage.removeItem("token");
             setToken(null)
             setUser(null)

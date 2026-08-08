@@ -32,3 +32,7 @@ const keywordTrackingSchema = new mongoose.Schema({
     status: { type: String, enum: ["pending", "checking", "completed", "failed"], default: "pending" },
 }, {timestamps: true});
 
+keywordTrackingSchema.index({userId: 1, keyword: 1, domain: 1}, {unique: true});
+
+const KeywordTracking = mongoose.model("KeywordTracking", keywordTrackingSchema);
+export default KeywordTracking;
